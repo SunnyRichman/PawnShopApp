@@ -1,0 +1,1 @@
+java --module-path "javafx-sdk-21.0.9\lib" --add-modules javafx.controls,javafx.fxml -jar pawnshop_management-1.0-SNAPSHOT.jar
