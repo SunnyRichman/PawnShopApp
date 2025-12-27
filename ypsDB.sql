@@ -46,7 +46,6 @@ CREATE TABLE `authorities` (
   `nickname` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `userName` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `pwd` varchar(16) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `isEditable` bit(1) NOT NULL DEFAULT b'0',
   PRIMARY KEY (`userName`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -94,36 +93,6 @@ CREATE TABLE `ticket` (
   PRIMARY KEY (`_No`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping events for database 'yaowarat pawn shop'
---
-
---
--- Dumping routines for database 'yaowarat pawn shop'
---
-/*!50003 DROP PROCEDURE IF EXISTS `callAll` */;
-ALTER DATABASE `yaowarat pawn shop` CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci ;
-/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
-/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
-/*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8mb4 */ ;
-/*!50003 SET character_set_results = utf8mb4 */ ;
-/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
-/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
-DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `callAll`()
-BEGIN
-	SELECT * FROM ticket t
-    LEFT JOIN objects o ON t._No = o.ticketNo;
-END ;;
-DELIMITER ;
-/*!50003 SET sql_mode              = @saved_sql_mode */ ;
-/*!50003 SET character_set_client  = @saved_cs_client */ ;
-/*!50003 SET character_set_results = @saved_cs_results */ ;
-/*!50003 SET collation_connection  = @saved_col_connection */ ;
-ALTER DATABASE `yaowarat pawn shop` CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci ;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -134,4 +103,4 @@ ALTER DATABASE `yaowarat pawn shop` CHARACTER SET utf8mb4 COLLATE utf8mb4_unicod
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-12-25  0:11:09
+-- Dump completed on 2025-12-27 22:17:27
